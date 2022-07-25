@@ -1,0 +1,27 @@
+  </div>
+  <%= link_to "Add Food", new_food_path %>
+  <% if @foods.exists? %>
+  <table>
+    <thead>
+     <td>Food</td>
+     <td>Measurement unit</td>
+     <td>Unit price</td>
+     <td>Action</td>
+    </thead>
+
+      <% @foods.each do |food| %>
+      <tr>
+        <td><%= link_to food.name ,food_path(food.id) %></td>
+          <td><%= food.measurement_unit %></td>
+          <td>$<%= food.unit_price %></td>
+          <td><%= button_to "Delete", food_path(food.id), method: :delete %></td>
+      </tr>
+      <% end %>
+
+  </table>
+   <% else %>
+          <p>No Foods Available!</p> 
+      <% end %>
+  <div>
+</div>
+</section>
