@@ -3,6 +3,10 @@ class RecipesController < ApplicationController
     @recipes = Recipe.all
   end
 
+  def show
+    
+  end
+
   def create
     @new_recipe = current_user.recipes.new(recipe_params)
     if @new_recipe.save!
@@ -18,7 +22,7 @@ class RecipesController < ApplicationController
     flash[:notice] = 'You have deleted the food!'
       redirect_to recipes_path
   end
-  
+
   private
   
   def recipe_params
