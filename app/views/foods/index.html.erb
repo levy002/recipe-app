@@ -21,7 +21,6 @@
               <td>$<%= food.unit_price %></td>
               <td><%= button_to "Delete", food_path(food.id), method: :delete %></td>
           </tr>
-          <%= food.user_id %>
           <%= @user %>
         <% end %>
 
