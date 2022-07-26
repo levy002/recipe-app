@@ -1,4 +1,5 @@
 class RecipesController < ApplicationController
+  load_and_authorize_resource
   def index
     @recipes = Recipe.all
   end
@@ -17,13 +18,13 @@ class RecipesController < ApplicationController
   def destroy
     @recipe = Recipe.find(params[:id])
     @recipe.destroy!
-    flash[:notice] = 'You have deleted the food!'
+    flash[:notice] = 'You have deleted the recipe!'
     redirect_to recipes_path
   end
 
   private
 
   def recipe_params
-    params.require(:recipe).permit(:name, :prepration_time, :cooking_time, :description)
+    params.require(:recipe).permit(:name, :preparation_time, :cooking_time, :description, :public)
   end
 end
