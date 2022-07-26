@@ -1,4 +1,6 @@
 class FoodsController < ApplicationController
+  load_and_authorize_resource
+  
   def index
     @foods = Food.all
   end
@@ -37,6 +39,8 @@ class FoodsController < ApplicationController
   private
 
   def food_params
-    params.require(:food).permit(:name, :measurement_unit, :unit_price)
+    food = params.require(:food).permit(:name, :measurement_unit, :unit_price)
+    food[:user_id] = current_user.id
+    food
   end
 end
