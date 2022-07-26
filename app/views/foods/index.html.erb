@@ -1,0 +1,31 @@
+<section>
+  <div>
+    <% if user_signed_in? %>
+        <%= link_to "Add Food", new_food_path %>
+    <% end %>   
+  </div>
+
+    <% if @foods.exists? %>
+    <table>
+      <thead>
+      <td>Food</td>
+      <td>Measurement unit</td>
+      <td>Unit price</td>
+      <td>Action</td>
+      </thead>
+
+        <% @foods.each do |food| %>
+          <tr>
+            <td><%= food.name %></td>
+              <td><%= food.measurement_unit %></td>
+              <td>$<%= food.unit_price %></td>
+              <td><%= button_to "Delete", food_path(food.id), method: :delete %></td>
+          </tr>
+          <%= @user %>
+        <% end %>
+
+    </table>
+    <% else %>
+      <p>No Food Added yet</p> 
+    <% end %>
+</section>
