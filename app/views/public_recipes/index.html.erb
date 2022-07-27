@@ -1,0 +1,20 @@
+<section>
+     <h1>PUBLIC RECIPES</h1>
+
+     <% if @public_recipes.exists? %>
+       <div>
+         <% @public_recipes.each do |recipe| %>
+              <div>
+                 <h2>Name: <%= recipe.name %></h2>
+                 <h3>By: <%= recipe.user.name %></h3>
+              </div>
+              <div>
+                <h3>Description: <%= recipe.description %></h3>
+              </div>
+         <% end %>
+       </div>
+     <% else %>
+      <h2>No recipes availbale!!</h2>
+     <% end %>  
+
+</section>
