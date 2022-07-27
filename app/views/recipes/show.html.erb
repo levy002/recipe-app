@@ -1,7 +1,7 @@
 <section class="container">
   <h2 class="text-center my-4"><%= @recipe.name %></h2>
 
-  <div class="d-flex gab-3">
+  <div class="d-flex justify-content-be">
     <p>Preparation time : <%= @recipe.preparation_time %></p>
     <p class="text-left">Public :</p>
   <%= button_to  recipe_path(@recipe.id), :method => :patch, class: "align-self-end" do %>
