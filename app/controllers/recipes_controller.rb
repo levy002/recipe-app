@@ -29,12 +29,11 @@ class RecipesController < ApplicationController
     if @recipe.public
       @recipe.update(public: false)
       flash[:notice] = 'You have update the recipe status to private'
-      redirect_to recipes_path
     else
       @recipe.update(public: true)
       flash[:notice] = 'You have update the recipe status to public'
-      redirect_to recipes_path
     end
+    redirect_to recipes_path
   end
 
   private
