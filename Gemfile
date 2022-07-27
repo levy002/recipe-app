@@ -77,4 +77,5 @@ end
 
 gem 'cancancan'
 gem 'devise'
+gem 'font-awesome-rails'
 gem 'jwt'
