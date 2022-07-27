@@ -17,10 +17,10 @@ class FoodsController < ApplicationController
     @food = Food.new(food_params)
 
     if @food.save
-      flash[:success] = 'Food was successfully created.'
+      flash[:notice] = 'Food was successfully created.'
       redirect_to foods_path
     else
-      flash[:error] = 'Error: Failed to add new food!'
+      flash[:alert] = 'Error: Failed to add new food!'
       render :new, status: :unprocessable_entity
     end
   end
@@ -29,10 +29,10 @@ class FoodsController < ApplicationController
     @food = Food.find(params[:id])
 
     if @food.destroy!
-      flash[:success] = 'Food deleted!'
+      flash[:notice] = 'Food deleted!'
       redirect_to foods_path
     else
-      flash[:error] = 'Failed to delete food!'
+      flash[:alert] = 'Failed to delete food!'
     end
   end
 
