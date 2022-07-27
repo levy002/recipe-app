@@ -1,1 +1,11 @@
-<h2>This is recipe show page</h2>
+<section class="container">
+  <h2 class="text-center"><%= @recipe.name %></h2>
+
+  <div class="d-flex justify-content-between">
+    <p>Preparation time: <%= @recipe.preparation_time %></p>
+  </div>
+  <div class="">
+    <p>Cooking time: <%= @recipe.cooking_time %></p>
+  </div>
+
+</section>
