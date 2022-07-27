@@ -1,11 +1,15 @@
 <section class="container">
-  <h2 class="text-center"><%= @recipe.name %></h2>
+  <h2 class="text-center my-4"><%= @recipe.name %></h2>
 
   <div class="d-flex justify-content-between">
     <p>Preparation time: <%= @recipe.preparation_time %></p>
+    <p>Public: <%= @recipe.public %></p>
   </div>
-  <div class="">
+  <div>
     <p>Cooking time: <%= @recipe.cooking_time %></p>
+  </div>
+  <div>
+    <p>Steps goes here ...</p>
   </div>
 
 </section>
