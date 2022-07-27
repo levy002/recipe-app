@@ -1,25 +1,27 @@
-<section>
-  <div>
+<section class='d-flex flex-column gap-5 justify-content-between align-items-center w-75 m-auto'>
+  <div class='d-flex w-100 justify-content-end'>
     <% if user_signed_in? %>
-        <%= link_to "Add Food", new_food_path %>
+        <%= link_to "Add Food", new_food_path, :class => "border border-2 border-primary px-3 py-1 rounded text-decoration-none" %>
     <% end %>   
   </div>
 
     <% if @foods.exists? %>
-    <table>
+    <table class='d-flex flex-column border border-1 w-100'>
       <thead>
-      <td>Food</td>
-      <td>Measurement unit</td>
-      <td>Unit price</td>
-      <td>Action</td>
+        <tr class='d-flex p-3 justify-content-between align-items-center'>
+          <td>Food</td>
+          <td>Measurement unit</td>
+          <td>Unit price</td>
+          <td>Action</td>
+        </tr>  
       </thead>
 
         <% @foods.each do |food| %>
-          <tr>
+          <tr class='d-flex gap-2 justify-content-between p-3 align-items-center border border-1'>
             <td><%= food.name %></td>
               <td><%= food.measurement_unit %></td>
               <td>$<%= food.unit_price %></td>
-              <td><%= button_to "Delete", food_path(food.id), method: :delete %></td>
+              <td><%= button_to "Delete", food_path(food.id), method: :delete, :class =>'border border-2 border-danger bg-white text-danger px-2 py-1 rounded' %></td>
           </tr>
           <%= @user %>
         <% end %>
