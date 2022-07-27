@@ -1,8 +1,10 @@
-<section>
+<section class='d-flex py-3 gap-3 ms-5'>
     <% if signed_in? %>
-    <%= link_to 'Recipe App', foods_path %>
-    <%= link_to 'Foods', foods_path %>
+    <%= link_to 'Recipe App', root_path, :class => "text-decoration-none text-white" %>
+    <%= link_to 'Foods', foods_path, :class => "text-decoration-none text-white" %>
+    <%= link_to 'Recipes', recipes_path, :class => "text-decoration-none text-white" %>
+    <%= link_to 'Public_Recipes', public_recipes_index_path, :class => "text-white text-decoration-none" %>
     <%= link_to "Log out", destroy_user_session_path, data: { "turbo-method":
-        :delete } %>
+        :delete }, :class => "text-decoration-none text-white" %>
     <% end %>
 <section>

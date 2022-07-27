@@ -11,10 +11,10 @@
   </head>
 
   <body>
-  <header>
+  <header class='d-flex bg-primary mb-5'>
     <%= render 'layouts/navbar' %>
-    <%= render 'layouts/alerts' %>
   </header>
+   <%= render 'layouts/alerts' %>
     <%= yield %>
   </body>
 </html>
