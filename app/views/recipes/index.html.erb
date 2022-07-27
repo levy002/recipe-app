@@ -7,7 +7,7 @@
   </div>
 
   <div class="row m-3">
-    <%= @recipes.each do |recipe| %>
+    <% @recipes.each do |recipe| %>
       <div class="col-3 border p-3">
         <h3><%= recipe.name %></h3>
         <%= button_to "Remove", recipe_path(recipe.id), method: :delete %>
