@@ -1,22 +1,18 @@
 class FoodRecipesController < ApplicationController
   before_action :set_food_recipe, only: %i[ show edit update destroy ]
 
-  # GET /food_recipes or /food_recipes.json
   def index
     @food_recipes = FoodRecipe.all
   end
 
-  # GET /food_recipes/1 or /food_recipes/1.json
   def show
   end
 
-  # GET /food_recipes/new
   def new
     @food_recipe = FoodRecipe.new
     @recipe_id = params[:recipe_id]
   end
 
-  # GET /food_recipes/1/edit
   def edit
     @recipe_id = params[:recipe_id]
   end
@@ -32,15 +28,10 @@ class FoodRecipesController < ApplicationController
   end
 
   def update
-    respond_to do |format|
-      if @food_recipe.update(food_recipe_params)
-        format.html { redirect_to food_recipe_url(@food_recipe), notice: "Food recipe was successfully updated." }
-        format.json { render :show, status: :ok, location: @food_recipe }
-      else
-        format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @food_recipe.errors, status: :unprocessable_entity }
-      end
-    end
+    @food_recipe = FoodRecipe.find(params[:id])
+    @food_recipe.update(edit_food_recipe_params)
+    flash[:notice] = 'You have updated the recipe food successfully'
+    redirect_to recipe_path(params[:recipe_id])
   end
 
   def destroy
@@ -51,13 +42,12 @@ class FoodRecipesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_food_recipe
-      @food_recipe = FoodRecipe.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def food_recipe_params
-      params.require(:food_recipe).permit(:quantity, :recipe_id, :food_id)
-    end
+  def edit_food_recipe_params
+    params.require(:edit_food_recipe).permit(:quantity, :food_id)
+  end
+
+  def food_recipe_params
+    params.require(:food_recipe).permit(:quantity, :food_id)
+  end
 end
