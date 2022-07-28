@@ -4,6 +4,7 @@
     <%= link_to 'Foods', foods_path, :class => "text-decoration-none text-white" %>
     <%= link_to 'Recipes', recipes_path, :class => "text-decoration-none text-white" %>
     <%= link_to 'Public_Recipes', public_recipes_index_path, :class => "text-white text-decoration-none" %>
+    <%= link_to 'Shopping_List', general_shopping_list_index_path, :class => "text-white text-decoration-none" %>
     <%= link_to "Log out", destroy_user_session_path, data: { "turbo-method":
         :delete }, :class => "text-decoration-none text-white" %>
     <% else %>
