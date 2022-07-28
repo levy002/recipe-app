@@ -1,4 +1,12 @@
-example_id                                                                                                    | status | run_time        |
-------------------------------------------------------------------------------------------------------------- | ------ | --------------- |
-/home/debas/Desktop/Microverse +/Microverse/Rails-module/week-four/recipe-app/spec/models/user_spec.rb[1:1:1] | passed | 0.00917 seconds |
-/home/debas/Desktop/Microverse +/Microverse/Rails-module/week-four/recipe-app/spec/models/user_spec.rb[1:1:2] | passed | 0.11375 seconds |
+example_id                                                                                                      | status | run_time        |
+--------------------------------------------------------------------------------------------------------------- | ------ | --------------- |
+/home/debas/Desktop/Microverse +/Microverse/Rails-module/week-four/recipe-app/spec/models/recipe_spec.rb[1:1:1] | passed | 0.00312 seconds |
+/home/debas/Desktop/Microverse +/Microverse/Rails-module/week-four/recipe-app/spec/models/recipe_spec.rb[1:1:2] | passed | 0.00444 seconds |
+/home/debas/Desktop/Microverse +/Microverse/Rails-module/week-four/recipe-app/spec/models/recipe_spec.rb[1:1:3] | passed | 0.00308 seconds |
+/home/debas/Desktop/Microverse +/Microverse/Rails-module/week-four/recipe-app/spec/models/recipe_spec.rb[1:1:4] | passed | 0.00419 seconds |
+/home/debas/Desktop/Microverse +/Microverse/Rails-module/week-four/recipe-app/spec/models/recipe_spec.rb[1:1:5] | passed | 0.00308 seconds |
+/home/debas/Desktop/Microverse +/Microverse/Rails-module/week-four/recipe-app/spec/models/recipe_spec.rb[1:1:6] | passed | 0.11535 seconds |
+/home/debas/Desktop/Microverse +/Microverse/Rails-module/week-four/recipe-app/spec/models/recipe_spec.rb[1:1:7] | passed | 0.00433 seconds |
+/home/debas/Desktop/Microverse +/Microverse/Rails-module/week-four/recipe-app/spec/models/recipe_spec.rb[1:1:8] | passed | 0.00553 seconds |
+/home/debas/Desktop/Microverse +/Microverse/Rails-module/week-four/recipe-app/spec/models/user_spec.rb[1:1:1]   | passed | 0.00917 seconds |
+/home/debas/Desktop/Microverse +/Microverse/Rails-module/week-four/recipe-app/spec/models/user_spec.rb[1:1:2]   | passed | 0.11375 seconds |
