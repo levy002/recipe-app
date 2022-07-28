@@ -17,7 +17,7 @@ RSpec.describe Recipe, type: :model do
         expect(subject).to_not be_valid
     end
 
-    it 'check the prepration_time is not blank' do
+    it 'check the preparation_time is not blank' do
         subject.preparation_time = nil
         expect(subject).to_not be_valid
       end
