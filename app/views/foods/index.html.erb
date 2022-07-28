@@ -18,7 +18,7 @@
 
         <% @foods.each do |food| %>
           <tr class='d-flex gap-2 justify-content-between p-3 align-items-center border border-1'>
-            <td><%= food.name %></td>
+            <td class="fw-bold"><%= food.name %></td>
               <td><%= food.measurement_unit %></td>
               <td>$<%= food.unit_price %></td>
               <% if can? :destroy, food %>
