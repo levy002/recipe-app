@@ -1,7 +1,7 @@
-<section>
-<h1>New Food</h1>
+<section class='bg-primary d-flex gap-3 flex-column align-items-center justify-content-between w-50 m-auto p-2'>
+<h1 class='text-white'>New Food</h1>
 <%= render "form", food: @food %>
 <div>
-  <%= link_to "Back", foods_path %>
+  <%= link_to "Back", foods_path, :class => 'text-white' %>
 </div>
 </section>
