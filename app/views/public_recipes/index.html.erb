@@ -1,11 +1,11 @@
 <section class='w-75 m-auto d-flex flex-column align-items-center gap-3'>
-     <h1>PUBLIC RECIPES</h1>
+     <h1 class='text-primary'>PUBLIC RECIPES</h1>
 
      <% if @public_recipes.exists? %>
        <div class='w-100 d-flex flex-column gap-4'>
          <% @public_recipes.each do |recipe| %>
          <% sum = 0 %>
-            <div class='border border-2 d-flex justify-content-between align-items-center w-100 p-3'>
+            <%= link_to recipe_path(recipe.id), :class => 'border border-2 border-primary rounded d-flex justify-content-between align-items-center w-100 p-3 text-decoration-none' do %>
               <div>
                  <h2 class='text-success'><%= recipe.name %></h2>
                  <h4>By: <%= recipe.user.name %></h4>
@@ -15,7 +15,7 @@
                 <% recipe.food_recipes.each {|food| sum += food.quantity * food.food.unit_price} %>
                 <h6><span><%= "Total Price $#{sum}" %></span></h5>
               </div>
-            </div>  
+            <% end %> 
          <% end %>
        </div>
      <% else %>
