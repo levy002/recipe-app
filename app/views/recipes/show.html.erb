@@ -45,12 +45,14 @@
     <% @recipe.food_recipes.each do |food_recipe| %>
       <tr>
         <th scope="row"><%= food_recipe.food.name %></th>
-        <td> <%= food_recipe.food_recipe.measurement_unit %> </td>
-        <td> $<%= food_recipe.food.price*food_recipe.quantity %></td>
+        <td> <%= food_recipe.food.measurement_unit %> </td>
+        <td> $<%= food_recipe.food.unit_price*food_recipe.quantity %></td>
         <td> 
         <% if can? :destroy, @recipe %>
+        <div class="d-flex gap-3">
           <%= link_to "Modify", edit_recipe_food_recipe_path(@recipe.id, food_recipe.id), class: "" %> 
-          <%= button_to "Remove", recipe_food_recipe_path(@recipe.id, food_recipe.id), :method => :delete, class: "" %>
+          <%= button_to "Remove", recipe_food_recipe_path(@recipe.id, food_recipe.id), :method => :delete, class: "btn btn-outline-danger" %>
+        </div>
         <% end %>
         </td>
       </tr>

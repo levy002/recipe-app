@@ -1,6 +1,6 @@
 <section class="container">
   <h3 class='m-3'> Add food to Recipe</h3>
-  <%= form_with url: recipe_recipe_food_path, method: :patch, scope: :edit_recipe_food do |form| %>
+  <%= form_with url: recipe_food_recipe_path, method: :patch, scope: :edit_food_recipe do |form| %>
     <div class="" > -
       <div class="mb-3 col-sm-4">
         <%= form.label :food, class:"form-label" %><br>

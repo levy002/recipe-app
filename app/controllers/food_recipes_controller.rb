@@ -1,6 +1,4 @@
 class FoodRecipesController < ApplicationController
-  before_action :set_food_recipe, only: %i[show edit update destroy]
-
   def index
     @food_recipes = FoodRecipe.all
   end
@@ -17,9 +15,12 @@ class FoodRecipesController < ApplicationController
   end
 
   def create
+    # @recipe = Recipe.find(params[:recipe_id])
+    # @food_recipe = @recipe.food_recipes.create(food_recipe_params)
     @recipe = Recipe.find(params[:recipe_id])
-    @food_recipe = @recipe.food_recipes.create(food_recipe_params)
-    if @recipe_food.save
+    food_recipe = FoodRecipe.new(params.require(:recipe_food).permit(:food_id, :quantity))
+    food_recipe.recipe = @recipe
+    if food_recipe.save
       redirect_to recipe_path(params[:recipe_id]), flash: { alert: 'Your food is saved' }
     else
       redirect_to new_recipe_food_recipe_path, flash: { alert: 'Could not save your food' }
@@ -35,9 +36,10 @@ class FoodRecipesController < ApplicationController
 
   def destroy
     @food_recipe = FoodRecipe.find(params[:id])
+    recipe = @food_recipe.recipe
     @food_recipe.destroy!
     flash[:notice] = 'You have deleted the recipe food!'
-    redirect_to recipe_path(params[:recipe_id])
+    redirect_to recipe_path(recipe)
   end
 
   private
