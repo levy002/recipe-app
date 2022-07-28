@@ -28,7 +28,7 @@ bundle install
 
 
 
-👤 **Sangwa Didier**
+👤 **levy_ukwishaka**
 
 - GitHub: [@levy002](https://github.com/levy002)
 - Twitter: [ @levy_ukwishaka](https://twitter.com/levy_ukwishaka)
