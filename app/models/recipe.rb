@@ -4,7 +4,7 @@ class Recipe < ApplicationRecord
   has_many :foods, through: :food_recipes
 
   validates :name, presence: true, length: { in: 1..50 }
-  validates :prepration_time, presence: true, length: { in: 1..100 }
+  validates :preparation_time, presence: true, length: { in: 1..100 }
   validates :cooking_time, presence: true, length: { in: 1..100 }
   validates :description, presence: true, length: { in: 1..300 }
 end
