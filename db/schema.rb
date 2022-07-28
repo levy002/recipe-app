@@ -10,9 +10,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_07_26_182704) do
+ActiveRecord::Schema[7.0].define(version: 2022_07_27_185148) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "food_recipes", force: :cascade do |t|
+    t.integer "quantity"
+    t.bigint "recipe_id", null: false
+    t.bigint "food_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["food_id"], name: "index_food_recipes_on_food_id"
+    t.index ["recipe_id"], name: "index_food_recipes_on_recipe_id"
+  end
+
+  create_table "foods", force: :cascade do |t|
+    t.string "name"
+    t.string "measurement_unit"
+    t.integer "unit_price"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "user_id"
+    t.index ["user_id"], name: "index_foods_on_user_id"
+  end
 
   create_table "recipes", force: :cascade do |t|
     t.bigint "user_id", null: false
@@ -24,15 +44,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_26_182704) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_recipes_on_user_id"
-    
-  create_table "foods", force: :cascade do |t|
-    t.string "name"
-    t.string "measurement_unit"
-    t.integer "unit_price"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.bigint "user_id"
-    t.index ["user_id"], name: "index_foods_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -48,6 +59,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_26_182704) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "recipes", "users"
+  add_foreign_key "food_recipes", "foods"
+  add_foreign_key "food_recipes", "recipes"
   add_foreign_key "foods", "users"
+  add_foreign_key "recipes", "users"
 end
