@@ -1,20 +1,25 @@
-<section>
+<section class='w-75 m-auto d-flex flex-column align-items-center gap-3'>
      <h1>PUBLIC RECIPES</h1>
 
      <% if @public_recipes.exists? %>
-       <div>
+       <div class='w-100 d-flex flex-column gap-4'>
          <% @public_recipes.each do |recipe| %>
+         <% sum = 0 %>
+            <div class='border border-2 d-flex justify-content-between align-items-center w-100 p-3'>
               <div>
-                 <h2>Name: <%= recipe.name %></h2>
-                 <h3>By: <%= recipe.user.name %></h3>
+                 <h2 class='text-success'><%= recipe.name %></h2>
+                 <h4>By: <%= recipe.user.name %></h4>
               </div>
               <div>
-                <h3>Description: <%= recipe.description %></h3>
+                <h6>Total food items: <%= recipe.food_recipes.count %></h5>
+                <% recipe.food_recipes.each {|food| sum += food.quantity * food.food.unit_price} %>
+                <h6><span><%= "Total Price $#{sum}" %></span></h5>
               </div>
+            </div>  
          <% end %>
        </div>
      <% else %>
-      <h2>No recipes availbale!!</h2>
+      <h2>No recipes availabale!!</h2>
      <% end %>  
 
 </section>
