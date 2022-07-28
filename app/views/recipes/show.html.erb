@@ -44,8 +44,8 @@
         <td> <%= food_recipe.food.price*food_recipe.quantity%></td>
         <td> 
         <% if can? :destroy, recipe %>
-          <button>Modify</button>
-          <%= button_to "Remove", recipe_food_recipe_path(@recipe.id, food_recipe.id), :method => :delete, class: "del" %>
+          <%= link_to "Modify", edit_recipe_food_recipe_path(@recipe.id, food_recipe.id), class: "" %> 
+          <%= button_to "Remove", recipe_food_recipe_path(@recipe.id, food_recipe.id), :method => :delete, class: "" %>
         <% end %>
         </td>
       </tr>
