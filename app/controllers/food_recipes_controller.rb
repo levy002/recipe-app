@@ -13,6 +13,7 @@ class FoodRecipesController < ApplicationController
   # GET /food_recipes/new
   def new
     @food_recipe = FoodRecipe.new
+    @recipe_id = params[:recipe_id]
   end
 
   # GET /food_recipes/1/edit

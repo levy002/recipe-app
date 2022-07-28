@@ -36,15 +36,18 @@
         </tr>
     </thead>
     <tbody>
+
+    <% @recipe.recipe_foods.each do |choose| %>
       <tr>
-        <th scope="row">Apple </th>
-        <td> 20g </td>
-        <td> <%= 5*20 %></td>
+        <th scope="row"><%= choose.food.name %></th>
+        <td> <%= choose.food.measurement_unit %> </td>
+        <td> <%= choose.food.price*food.quantity%></td>
         <td> 
           <button>Modify</button>
           <button>Remove</button>
         </td>
       </tr>
+    <% end %>
    </tbody>
   </table>
 </section>
