@@ -1,7 +1,7 @@
 <section class="container">
   <h2 class="text-center my-4"><%= @recipe.name %></h2>
 
-  <div class="d-flex justify-content-be">
+  <div class="d-flex justify-content-between">
     <p>Preparation time : <%= @recipe.preparation_time %></p>
     <p class="text-left">Public :</p>
   <%= button_to  recipe_path(@recipe.id), :method => :patch, class: "align-self-end" do %>
@@ -20,12 +20,17 @@
     <p>Steps goes here ...</p>
   </div>
 
-  <div>
-   <button class='btn btn-outline-info'>
-   <%= link_to 'Add incredient', new_recipe_recipe_food_path(@recipe.id), class: "nav-link" %>
- </button> 
+  <div class="d-flex justify-content-end">
+    <button class='btn btn-outline-info'>
+      <%= link_to 'Add ingredient', new_recipe_food_recipe_path(@recipe.id), class: "nav-link" %>
+    </button> 
    </div>
-
+   <div class="d-flex justify-content-start">
+    <button class='btn btn-outline-info'>
+      <%= link_to 'General shopping list', new_recipe_food_recipe_path(@recipe.id), class: "nav-link" %>
+    </button> 
+   </div>
+   <hr>
    <table class="table m-3">
     <thead>
       <tr>
@@ -37,13 +42,13 @@
     </thead>
     <tbody>
 
-    <% @recipe.recipe_foods.each do |food_recipe| %>
+    <% @recipe.food_recipes.each do |food_recipe| %>
       <tr>
         <th scope="row"><%= food_recipe.food.name %></th>
         <td> <%= food_recipe.food_recipe.measurement_unit %> </td>
-        <td> <%= food_recipe.food.price*food_recipe.quantity%></td>
+        <td> $<%= food_recipe.food.price*food_recipe.quantity %></td>
         <td> 
-        <% if can? :destroy, recipe %>
+        <% if can? :destroy, @recipe %>
           <%= link_to "Modify", edit_recipe_food_recipe_path(@recipe.id, food_recipe.id), class: "" %> 
           <%= button_to "Remove", recipe_food_recipe_path(@recipe.id, food_recipe.id), :method => :delete, class: "" %>
         <% end %>

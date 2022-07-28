@@ -18,7 +18,7 @@ class FoodRecipesController < ApplicationController
 
   def create
     @recipe = Recipe.find(params[:recipe_id])
-    @food_recipe = @recipe.food_recipe.create(food_recipe_params)
+    @food_recipe = @recipe.food_recipes.create(food_recipe_params)
     if @recipe_food.save
       redirect_to recipe_path(params[:recipe_id]), flash: { alert: 'Your food is saved' }
     else
