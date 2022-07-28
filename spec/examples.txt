@@ -1,43 +1,4 @@
-example_id                                                                                                                        | status  | run_time        |
---------------------------------------------------------------------------------------------------------------------------------- | ------- | --------------- |
-/home/debas/Desktop/Microverse +/Microverse/Rails-module/week-four/recipe-app/spec/helpers/food_recipes_helper_spec.rb[1:1]       | pending | 0.00001 seconds |
-/home/debas/Desktop/Microverse +/Microverse/Rails-module/week-four/recipe-app/spec/helpers/recipes_helper_spec.rb[1:1]            | pending | 0.00001 seconds |
-/home/debas/Desktop/Microverse +/Microverse/Rails-module/week-four/recipe-app/spec/models/food_recipe_spec.rb[1:1]                | pending | 0.00002 seconds |
-/home/debas/Desktop/Microverse +/Microverse/Rails-module/week-four/recipe-app/spec/models/food_spec.rb[1:1:1]                     | passed  | 0.00301 seconds |
-/home/debas/Desktop/Microverse +/Microverse/Rails-module/week-four/recipe-app/spec/models/food_spec.rb[1:1:2]                     | passed  | 0.00258 seconds |
-/home/debas/Desktop/Microverse +/Microverse/Rails-module/week-four/recipe-app/spec/models/food_spec.rb[1:1:3]                     | passed  | 0.00271 seconds |
-/home/debas/Desktop/Microverse +/Microverse/Rails-module/week-four/recipe-app/spec/models/food_spec.rb[1:1:4]                     | passed  | 0.00236 seconds |
-/home/debas/Desktop/Microverse +/Microverse/Rails-module/week-four/recipe-app/spec/models/food_spec.rb[1:1:5]                     | passed  | 0.00282 seconds |
-/home/debas/Desktop/Microverse +/Microverse/Rails-module/week-four/recipe-app/spec/models/food_spec.rb[1:1:6]                     | passed  | 0.09862 seconds |
-/home/debas/Desktop/Microverse +/Microverse/Rails-module/week-four/recipe-app/spec/models/food_spec.rb[1:1:7]                     | passed  | 0.00344 seconds |
-/home/debas/Desktop/Microverse +/Microverse/Rails-module/week-four/recipe-app/spec/models/recipe_spec.rb[1:1]                     | pending | 0.00002 seconds |
-/home/debas/Desktop/Microverse +/Microverse/Rails-module/week-four/recipe-app/spec/models/user_spec.rb[1:1]                       | pending | 0.00001 seconds |
-/home/debas/Desktop/Microverse +/Microverse/Rails-module/week-four/recipe-app/spec/requests/food_recipes_spec.rb[1:1:1]           | pending | 0.0029 seconds  |
-/home/debas/Desktop/Microverse +/Microverse/Rails-module/week-four/recipe-app/spec/requests/food_recipes_spec.rb[1:2:1]           | pending | 0.00702 seconds |
-/home/debas/Desktop/Microverse +/Microverse/Rails-module/week-four/recipe-app/spec/requests/food_recipes_spec.rb[1:3:1]           | failed  | 0.00724 seconds |
-/home/debas/Desktop/Microverse +/Microverse/Rails-module/week-four/recipe-app/spec/requests/food_recipes_spec.rb[1:4:1]           | pending | 0.00604 seconds |
-/home/debas/Desktop/Microverse +/Microverse/Rails-module/week-four/recipe-app/spec/requests/food_recipes_spec.rb[1:5:1:1]         | failed  | 0.08171 seconds |
-/home/debas/Desktop/Microverse +/Microverse/Rails-module/week-four/recipe-app/spec/requests/food_recipes_spec.rb[1:5:1:2]         | failed  | 0.00198 seconds |
-/home/debas/Desktop/Microverse +/Microverse/Rails-module/week-four/recipe-app/spec/requests/food_recipes_spec.rb[1:5:2:1]         | failed  | 0.0031 seconds  |
-/home/debas/Desktop/Microverse +/Microverse/Rails-module/week-four/recipe-app/spec/requests/food_recipes_spec.rb[1:5:2:2]         | failed  | 0.003 seconds   |
-/home/debas/Desktop/Microverse +/Microverse/Rails-module/week-four/recipe-app/spec/requests/food_recipes_spec.rb[1:6:1:1]         | pending | 0.00279 seconds |
-/home/debas/Desktop/Microverse +/Microverse/Rails-module/week-four/recipe-app/spec/requests/food_recipes_spec.rb[1:6:1:2]         | pending | 0.00406 seconds |
-/home/debas/Desktop/Microverse +/Microverse/Rails-module/week-four/recipe-app/spec/requests/food_recipes_spec.rb[1:6:2:1]         | pending | 0.00335 seconds |
-/home/debas/Desktop/Microverse +/Microverse/Rails-module/week-four/recipe-app/spec/requests/food_recipes_spec.rb[1:7:1]           | pending | 0.00316 seconds |
-/home/debas/Desktop/Microverse +/Microverse/Rails-module/week-four/recipe-app/spec/requests/food_recipes_spec.rb[1:7:2]           | pending | 0.00307 seconds |
-/home/debas/Desktop/Microverse +/Microverse/Rails-module/week-four/recipe-app/spec/requests/recipes_spec.rb[1:1:1]                | failed  | 0.07361 seconds |
-/home/debas/Desktop/Microverse +/Microverse/Rails-module/week-four/recipe-app/spec/requests/users_spec.rb[1:1:1]                  | failed  | 0.35532 seconds |
-/home/debas/Desktop/Microverse +/Microverse/Rails-module/week-four/recipe-app/spec/routing/food_recipes_routing_spec.rb[1:1:1]    | failed  | 0.00377 seconds |
-/home/debas/Desktop/Microverse +/Microverse/Rails-module/week-four/recipe-app/spec/routing/food_recipes_routing_spec.rb[1:1:2]    | failed  | 0.00202 seconds |
-/home/debas/Desktop/Microverse +/Microverse/Rails-module/week-four/recipe-app/spec/routing/food_recipes_routing_spec.rb[1:1:3]    | failed  | 0.00261 seconds |
-/home/debas/Desktop/Microverse +/Microverse/Rails-module/week-four/recipe-app/spec/routing/food_recipes_routing_spec.rb[1:1:4]    | failed  | 0.00171 seconds |
-/home/debas/Desktop/Microverse +/Microverse/Rails-module/week-four/recipe-app/spec/routing/food_recipes_routing_spec.rb[1:1:5]    | failed  | 0.06898 seconds |
-/home/debas/Desktop/Microverse +/Microverse/Rails-module/week-four/recipe-app/spec/routing/food_recipes_routing_spec.rb[1:1:6]    | failed  | 0.00364 seconds |
-/home/debas/Desktop/Microverse +/Microverse/Rails-module/week-four/recipe-app/spec/routing/food_recipes_routing_spec.rb[1:1:7]    | failed  | 0.00229 seconds |
-/home/debas/Desktop/Microverse +/Microverse/Rails-module/week-four/recipe-app/spec/routing/food_recipes_routing_spec.rb[1:1:8]    | failed  | 0.0041 seconds  |
-/home/debas/Desktop/Microverse +/Microverse/Rails-module/week-four/recipe-app/spec/views/food_recipes/edit.html.erb_spec.rb[1:1]  | failed  | 0.2747 seconds  |
-/home/debas/Desktop/Microverse +/Microverse/Rails-module/week-four/recipe-app/spec/views/food_recipes/index.html.erb_spec.rb[1:1] | failed  | 0.01358 seconds |
-/home/debas/Desktop/Microverse +/Microverse/Rails-module/week-four/recipe-app/spec/views/food_recipes/new.html.erb_spec.rb[1:1]   | failed  | 0.09585 seconds |
-/home/debas/Desktop/Microverse +/Microverse/Rails-module/week-four/recipe-app/spec/views/food_recipes/show.html.erb_spec.rb[1:1]  | failed  | 0.00942 seconds |
-/home/debas/Desktop/Microverse +/Microverse/Rails-module/week-four/recipe-app/spec/views/recipes/index.html.erb_spec.rb[1:1]      | pending | 0.00001 seconds |
-/home/debas/Desktop/Microverse +/Microverse/Rails-module/week-four/recipe-app/spec/views/users/index.html.erb_spec.rb[1:1]        | pending | 0.00001 seconds |
+example_id                                                                                                    | status | run_time        |
+------------------------------------------------------------------------------------------------------------- | ------ | --------------- |
+/home/debas/Desktop/Microverse +/Microverse/Rails-module/week-four/recipe-app/spec/models/user_spec.rb[1:1:1] | passed | 0.00917 seconds |
+/home/debas/Desktop/Microverse +/Microverse/Rails-module/week-four/recipe-app/spec/models/user_spec.rb[1:1:2] | passed | 0.11375 seconds |
