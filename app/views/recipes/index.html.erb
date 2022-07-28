@@ -1,20 +1,24 @@
 <section>
-  <h1>All Recipes</h1>
+  <h1 class="text-center">All Recipes</h1>
   <div class="d-flex justify-content-end m-3">
     <button class="btn btn-outline-info">
       <%= link_to 'Add new recipe', new_recipe_path, class: 'nav-link' %>
     </button>
   </div>
 
-  <div class="row m-3">
-    <% @recipes.each do |recipe| %>
-      <div class="col-3 border p-3">
-        <h3><%= recipe.name %></h3>
-        <%= button_to "Remove", recipe_path(recipe.id), method: :delete %>
+  <% @recipes.each do |recipe| %>
+    <div class="row m-3 border">
+      <div class="col-3 m-2 p-3">
+        <%= link_to recipe_path(recipe.id) do %>
+          <h3><%= recipe.name %></h3>
+        <% end %>
+        <% if can? :destroy, recipe %>
+          <%= button_to "Remove", recipe_path(recipe.id), method: :delete , class: "btn btn-danger" %>
+        <% end %>
       </div>
-      <div class="col-offset-1 col-8">
+      <div class="col-offset-1 col-8 m-2">
         <p><%= recipe.description %></p>
       </div>
-    <% end %>
-  </div>
+    </div>
+  <% end %>
 </section>
