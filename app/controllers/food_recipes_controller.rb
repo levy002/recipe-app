@@ -18,24 +18,19 @@ class FoodRecipesController < ApplicationController
 
   # GET /food_recipes/1/edit
   def edit
+    @recipe_id = params[:recipe_id]
   end
 
-  # POST /food_recipes or /food_recipes.json
   def create
-    @food_recipe = FoodRecipe.new(food_recipe_params)
-
-    respond_to do |format|
-      if @food_recipe.save
-        format.html { redirect_to food_recipe_url(@food_recipe), notice: "Food recipe was successfully created." }
-        format.json { render :show, status: :created, location: @food_recipe }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @food_recipe.errors, status: :unprocessable_entity }
-      end
+    @recipe = Recipe.find(params[:recipe_id])
+    @food_recipe = @recipe.food_recipe.create(food_recipe_params)
+    if @recipe_food.save
+      redirect_to recipe_path(params[:recipe_id]), flash: { alert: 'Your food is saved' }
+    else
+      redirect_to new_recipe_food_recipe_path, flash: { alert: 'Could not save your food' }
     end
   end
 
-  # PATCH/PUT /food_recipes/1 or /food_recipes/1.json
   def update
     respond_to do |format|
       if @food_recipe.update(food_recipe_params)
@@ -49,12 +44,10 @@ class FoodRecipesController < ApplicationController
   end
 
   def destroy
-    @food_recipe.destroy
-
-    respond_to do |format|
-      format.html { redirect_to food_recipes_url, notice: "Food recipe was successfully destroyed." }
-      format.json { head :no_content }
-    end
+    @food_recipe = FoodRecipe.find(params[:id])
+    @food_recipe.destroy!
+    flash[:notice] = 'You have deleted the recipe food!'
+    redirect_to recipe_path(params[:recipe_id])
   end
 
   private
