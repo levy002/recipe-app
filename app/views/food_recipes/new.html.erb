@@ -1,9 +1,21 @@
-<h1>New food recipe</h1>
+<section class="container">
+    <h3 class='m-3'> Add food to Recipe</h3>
+  <%= form_with url: recipe_recipe_foods_path, scope: :recipe_food do |form| %>
+    <div class="form-div" >
+    <div class="mb-3 col-sm-4">
+    <%= form.label :food, class:"form-label" %><br>
+    <%= form.select :food_id, current_user.foods.collect {|food| [food.name, food.id]},{ include_blank: true} , class:"form-select" %><br>
 
-<%= render "form", food_recipe: @food_recipe %>
+    </div>
 
-<br>
+    <div class="mb-3 col-sm-4">
+    <%= form.label :quantity, class:"form-label" %><br>
+    <%= form.number_field :quantity ,  class:"form-control" , required: true, placeholder: '1',  min: 1%><br>
+    </div>
 
-<div>
-  <%= link_to "Back to food recipes", food_recipes_path %>
-</div>
+    <div class="mb-3 col-sm-2">
+    <%= form.submit "Add", class:"btn btn-primary form-control" %>
+    </div>
+    </div>
+<%end%>
+</section>
