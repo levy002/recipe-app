@@ -1,0 +1,23 @@
+<section>
+<%= form_with(model: food, url: foods_path) do |form| %>
+
+  <div class="d-flex flex-column">
+    <%= form.label :name, class: 'text-white' %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="d-flex flex-column pt-2">
+    <%= form.label :measurement_unit, class: 'text-white' %>
+    <%= form.text_field :measurement_unit %>
+  </div>
+
+  <div class="d-flex flex-column pt-2">
+    <%= form.label :unit_price, class: 'text-white' %>
+    <%= form.number_field :unit_price %>
+  </div>
+
+  <div class="d-flex align-items-center justify-content-center pt-3">
+    <%= form.submit :Add, class: 'bg-white border border-0 rounded text-primary hover-text-white align-self-center px-3 py-1' %>
+  </div>
+<% end %>
+</section>

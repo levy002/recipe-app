@@ -1,0 +1,32 @@
+<section class='d-flex flex-column gap-5 justify-content-between align-items-center w-75 m-auto'>
+    <h2 class='text-primary'>Shopping List</h2>
+
+    <div class="d-flex gap-5">
+        <h6>Amount of food items to buy: <span class='text-danger'><%= @ingredients.count %></span></h3>
+        <h6>
+           Total value of food needed: 
+            <% sum = 0 %>
+            <% @ingredients.each { |food_recipe| sum += Food.find(food_recipe.food_id).unit_price * food_recipe.quantity} %>
+             <span class='text-danger'><%= "$#{sum}" %></span>
+        </h6>
+    </div>
+    <table class='d-flex flex-column border border-1 w-75'>
+        <thead>
+            <tr class='d-flex p-3 justify-content-between align-items-center'>
+                <th>Food</th>
+                <th>Quantity</th>
+                <th>Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% @ingredients.each do |food_recipe| %>
+            <% food = Food.find(food_recipe.food_id) %>
+                <tr class='d-flex gap-2 justify-content-between p-3 align-items-center border border-1'>
+                    <td class="fw-bold"><%= Food.find(food_recipe.food_id).name %></td>
+                    <td> <%= food_recipe.quantity %> <%= food.measurement_unit %></td>
+                    <td>$<%= Food.find(food_recipe.food_id).unit_price * food_recipe.quantity %></td> 
+                </tr>
+            <% end %>
+        </tbody>
+    </table>
+</section>

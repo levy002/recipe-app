@@ -1,0 +1,36 @@
+<section class='bg-primary d-flex flex-column align-items-center justify-content-between w-50 m-auto p-2'>
+<h2 class='pt-3 text-white'>Sign up</h2>
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= render "devise/shared/error_messages", resource: resource %>
+  
+  <div class="field pt-3">
+    <%= f.label :name, class: 'text-white' %><br />
+    <%= f.text_field :name, autofocus: true, autocomplete: "name" %>
+  </div>
+
+  <div class="field pt-3">
+    <%= f.label :email, class: 'text-white' %><br />
+    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+  </div>
+
+  <div class="field pt-3">
+    <%= f.label :password, class: 'text-white' %>
+    <% if @minimum_password_length %>
+    <em class="text-white">(<%= @minimum_password_length %> characters minimum)</em>
+    <% end %><br />
+    <%= f.password_field :password, autocomplete: "new-password" %>
+  </div>
+
+  <div class="field pt-3">
+    <%= f.label :password_confirmation, class: 'text-white' %><br />
+    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+  </div>
+
+  <div class="actions d-flex align-items-center justify-content-center pt-3">
+    <%= f.submit "Sign up", class: 'bg-white hover-bg-primary border border-0 rounded text-primary hover-text-white align-self-center px-3 py-1' %>
+  </div>
+<% end %>
+
+<%= render "devise/shared/links" %>
+</section>

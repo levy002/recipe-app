@@ -5,12 +5,16 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <script src="https://kit.fontawesome.com/f8d8346384.js" crossorigin="anonymous"></script>
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
 
   <body>
+  <header class='d-flex bg-primary mb-5'>
+    <%= render 'layouts/navbar' %>
+  </header>
+   <%= render 'layouts/alerts' %>
     <%= yield %>
   </body>
 </html>
