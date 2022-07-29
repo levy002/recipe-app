@@ -1,5 +1,7 @@
-# Rails-Blog-App : Recipe App
+# Recipe App
 >The Recipe app is a classic example of a recipe website. It's a functional website that shows the list of foods and recipes and empowers readers to interact with them by adding new foods and recipes. Users can access the application's services by creating a new account or logging in if they already have an account.
+## Live Demo
+ [Live link](https://recipe-app-222.herokuapp.com/)
 ## prerequisites
 ``` 
   Ruby
